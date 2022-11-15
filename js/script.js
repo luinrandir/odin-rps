@@ -6,12 +6,11 @@
 
 // We need a constant list for the computer choices
 const COMPUTER_CHOICES = ["Rock", "Paper", "Scissors"];
+
 // We need to keep track of our scores
 let playerScore = 0;
 let computerScore = 0;
 
-console.log(`Current Player score: ${playerScore}`);
-console.log(`Current Computer score: ${computerScore}`);
 // We need our player choice
 // We need to validate the choice, otherwise the player will be able to add anything
 let correctChoice = false;
@@ -32,5 +31,9 @@ while (!correctChoice) {
 console.log(`Player choice: ${playerChoice}`);
 
 // We need our computer choice (this is to be random)
+let computerChoice =
+  COMPUTER_CHOICES[Math.floor(Math.random() * COMPUTER_CHOICES.length)];
+
 // We need to determine our winner for that round
+
 // We need to determine our winner for the game (best out of five)
