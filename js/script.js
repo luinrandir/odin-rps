@@ -16,10 +16,10 @@ let computerScore = 0;
 let correctChoice = false;
 let playerChoice = prompt("What will you choose? Rock, Paper, or Scissors?");
 while (!correctChoice) {
-  switch (playerChoice) {
-    case "Rock":
-    case "Paper":
-    case "Scissors":
+  switch (playerChoice.toLowerCase()) {
+    case "rock":
+    case "paper":
+    case "scissors":
       correctChoice = true;
       break;
     default:
@@ -33,7 +33,33 @@ console.log(`Player choice: ${playerChoice}`);
 // We need our computer choice (this is to be random)
 let computerChoice =
   COMPUTER_CHOICES[Math.floor(Math.random() * COMPUTER_CHOICES.length)];
-
+console.log(`Computer choice: ${computerChoice}`);
 // We need to determine our winner for that round
+let results = (playerChoice, computerChoice) => {
+  playerChoice = playerChoice.toLowerCase();
+  computerChoice = computerChoice.toLowerCase();
 
+  if (playerChoice === computerChoice)
+    return `${playerChoice} vs ${computerChoice} -> Tie!`;
+
+  if (playerWin(playerChoice, computerChoice)) {
+    playerScore += 1;
+    return `${playerChoice} vs ${computerChoice} -> Player Wins!`;
+  }
+  computerScore += 1;
+  return `${playerChoice} vs ${computerChoice} -> Computer Wins!`;
+};
+
+function playerWin(playerChoice, computerChoice) {
+  switch (playerChoice) {
+    case "rock":
+      return computerChoice === "scissors" ? true : false;
+    case "paper":
+      return computerChoice === "rock" ? true : false;
+    case "scissors":
+      return computerChoice === "paper" ? true : false;
+  }
+}
+console.log(results(playerChoice, computerChoice));
+console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 // We need to determine our winner for the game (best out of five)
