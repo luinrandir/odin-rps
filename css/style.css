@@ -95,9 +95,6 @@ svg {
 .fw-light {
   font-weight: var(--fw-light);
 }
-.fw-regular {
-  font-weight: var(--fw-regular);
-}
 .fw-semi-bold {
   font-weight: var(--fw-semi-bold);
 }
@@ -122,6 +119,7 @@ body {
   justify-content: space-between;
   font-family: var(--ff-primary);
   font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
   color: var(--iro-shiroi);
 }
 
@@ -130,7 +128,7 @@ body {
 .footer {
   display: flex;
   align-items: center;
-  padding: 1em;
+  padding: 0.5em 1em;
   gap: 1em;
 }
 .header {
@@ -148,26 +146,35 @@ body {
 
 /* main content */
 main {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  padding: 2em 1em 0;
   height: 100%;
   flex-direction: column;
 }
-main,
 .score,
 .player,
 .computer,
 .weapons,
 .item,
-.choices {
+.choices,
+.title {
   display: flex;
   gap: 1em;
   justify-content: center;
   align-items: center;
-  padding: 1em;
+  padding: 0 1em;
 }
 .choices,
-.item {
+.item,
+.title {
   flex-direction: column;
 }
 svg > path {
   fill: var(--iro-shiroi);
+}
+.item > figcaption {
+  text-align: center;
+  inline-size: 20rem;
 }
