@@ -23,6 +23,7 @@ html:focus-within {
 html,
 body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -41,7 +42,6 @@ svg {
   /* colors */
   --iro-400: hsl(213, 61%, 15%);
   --iro-200: hsl(212, 20%, 37%);
-  --iro-kuroi: hsl(0, 0%, 0%);
   --iro-shiroi: hsl(0, 0%, 100%);
 
   /* fonts */
@@ -50,8 +50,7 @@ svg {
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
 
-  --fc-primary: var(--iro-kuroi);
-  --fc-secondary: var(--iro-shiroi);
+  --fc-primary: var(--iro-shiroi);
 
   --fw-extra-light: 200;
   --fw-light: 300;
@@ -72,6 +71,7 @@ svg {
   --fs-label: var(--fs-24);
   --fs-body: var(--fs-16);
   --fs-footer: var(--fs-12);
+  --fs-description: var(--fs-14);
 }
 
 /* utility classes */
@@ -84,6 +84,9 @@ svg {
 }
 .fs-label {
   font-size: var(--fs-label);
+}
+.fs-description {
+  font-size: var(--fs-description);
 }
 
 .fw-extra-light {
@@ -102,16 +105,69 @@ svg {
   font-weight: var(--fw-extra-bold);
 }
 
-.text-iro-kuroi {
-  color: var(--iro-kuroi);
-}
-.text-iro-shiroi {
-  color: var(--iro-shiroi);
-}
-
 .bg-primary {
   background-color: var(--iro-400);
 }
 .bg-secondary {
   background-color: var(--iro-200);
+}
+.bg-gradient {
+  background-image: linear-gradient(var(--iro-400), var(--iro-200));
+}
+
+/* general styling */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  color: var(--iro-shiroi);
+}
+
+/* header and footer */
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  gap: 1em;
+}
+.header {
+  justify-content: space-between;
+}
+.nav > ul {
+  display: flex;
+  gap: 1em;
+  font-size: var(--fs-nav);
+}
+.footer {
+  justify-content: center;
+  font-size: var(--fs-footer);
+}
+
+/* main content */
+main {
+  height: 100%;
+  flex-direction: column;
+}
+main,
+.score,
+.player,
+.computer,
+.weapons,
+.item,
+.choices {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.choices,
+.item {
+  flex-direction: column;
+}
+svg > path {
+  fill: var(--iro-shiroi);
 }
