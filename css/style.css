@@ -1,7 +1,3 @@
-:root {
-  /* fonts */
-  --ff-primary: "Sono", sans-serif;
-}
 /* Reset */
 *,
 *::before,
@@ -41,3 +37,81 @@ svg {
 }
 
 /* Custom Properties */
+:root {
+  /* colors */
+  --iro-400: hsl(213, 61%, 15%);
+  --iro-200: hsl(212, 20%, 37%);
+  --iro-kuroi: hsl(0, 0%, 0%);
+  --iro-shiroi: hsl(0, 0%, 100%);
+
+  /* fonts */
+  --ff-primary: "Sono", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+
+  --fc-primary: var(--iro-kuroi);
+  --fc-secondary: var(--iro-shiroi);
+
+  --fw-extra-light: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+  --fw-extra-bold: 800;
+
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-24: 1.5rem;
+  --fs-36: 2.25rem;
+  --fs-48: 3rem;
+
+  --fs-primary-heading: var(--fs-48);
+  --fs-secondary-heading: var(--fs-36);
+  --fs-nav: var(--fs-24);
+  --fs-label: var(--fs-24);
+  --fs-body: var(--fs-16);
+  --fs-footer: var(--fs-12);
+}
+
+/* utility classes */
+
+.fs-primary-heading {
+  font-size: var(--fs-primary-heading);
+}
+.fs-secondary-heading {
+  font-size: var(--fs-secondary-heading);
+}
+.fs-label {
+  font-size: var(--fs-label);
+}
+
+.fw-extra-light {
+  font-weight: var(--fw-extra-light);
+}
+.fw-light {
+  font-weight: var(--fw-light);
+}
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-semi-bold {
+  font-weight: var(--fw-semi-bold);
+}
+.fw-extra-bold {
+  font-weight: var(--fw-extra-bold);
+}
+
+.text-iro-kuroi {
+  color: var(--iro-kuroi);
+}
+.text-iro-shiroi {
+  color: var(--iro-shiroi);
+}
+
+.bg-primary {
+  background-color: var(--iro-400);
+}
+.bg-secondary {
+  background-color: var(--iro-200);
+}
