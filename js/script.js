@@ -1,19 +1,10 @@
 // Modals
-const weaponButton = document.getElementById("weapon-button");
-const weaponModal = document.getElementById("weapon-modal");
 const aboutButton = document.getElementById("about-button");
 const aboutModal = document.getElementById("about-modal");
-const closeWeapon = document.querySelector(".close-weapon");
 const closeAbout = document.querySelector(".close-about");
 
-weaponButton.addEventListener("click", () => {
-  weaponModal.showModal();
-});
 aboutButton.addEventListener("click", () => {
   aboutModal.showModal();
-});
-closeWeapon.addEventListener("click", () => {
-  weaponModal.close();
 });
 closeAbout.addEventListener("click", () => {
   aboutModal.close();
