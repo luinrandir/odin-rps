@@ -12,16 +12,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="header bg-primary">
       <div class="title fs-primary-heading fw-extra-bold">RPS</div>
       <div class="nav fs-label fw-semi-bold">
-        <ul role="list">
-          <li>Weapons</li>
-          <li>About</li>
-        </ul>
+        <button class="button" id="weapon-button">Weapons</button>
+        <button class="button" id="about-button">About</button>
       </div>
     </header>
     <main class="bg-gradient">
@@ -149,5 +147,27 @@
         <img src="img/GitHub-Mark-Light-32px.png" alt="github" />
       </a>
     </footer>
+    <dialog class="modal bg-modal" id="weapon-modal">
+      <div class="modal-contents">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+          molestiae aliquam fugit alias ab rerum adipisci provident tempore
+          laborum. Labore quidem at unde similique quasi voluptates
+          reprehenderit sint illo alias!
+        </p>
+        <button class="button close-weapon">Close</button>
+      </div>
+    </dialog>
+    <dialog class="modal bg-modal" id="about-modal">
+      <div class="modal-contents">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
+          consequuntur aspernatur assumenda pariatur possimus consectetur
+          explicabo provident sint sunt odit. Officiis nemo, aliquid possimus
+          sunt sit tempora dolor libero molestiae?
+        </p>
+        <button class="button close-about">Close</button>
+      </div>
+    </dialog>
   </body>
 </html>
