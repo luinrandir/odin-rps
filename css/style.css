@@ -43,7 +43,7 @@ svg {
   --iro-400: hsl(213, 61%, 15%);
   --iro-300: hsl(213, 41%, 26%);
   --iro-200: hsl(212, 20%, 37%);
-  --iro-100: hsl(212, 60%, 60%);
+  --iro-100: hsl(212, 60%, 50%);
   --iro-shiroi: hsl(0, 0%, 100%);
 
   /* fonts */
@@ -203,6 +203,7 @@ svg > path {
 
 /* modals */
 .modal {
+  color: var(--iro-shiroi);
   position: absolute;
   left: 50%;
   top: 25%;
@@ -221,4 +222,17 @@ svg > path {
 .modal::backdrop {
   background: var(--iro-backdrop);
   opacity: 0.5;
+}
+li {
+  list-style-type: "> ";
+}
+.modal-link {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  transition: all 750ms ease-in-out;
+}
+.modal-link:hover {
+  text-decoration: underline;
+  color: black;
 }
