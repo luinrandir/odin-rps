@@ -121,6 +121,10 @@ svg {
   background-color: var(--iro-100);
 }
 
+.center {
+  text-align: center;
+}
+
 /* general styling */
 body {
   display: flex;
@@ -163,7 +167,9 @@ main {
 .weapons,
 .item,
 .choices,
-.title {
+.title,
+.results,
+.outcome {
   display: flex;
   gap: 1em;
   justify-content: center;
@@ -172,7 +178,8 @@ main {
 }
 .choices,
 .item,
-.title {
+.title,
+.results {
   flex-direction: column;
 }
 svg > path {
@@ -216,6 +223,29 @@ svg > path {
 }
 .button:active {
   background-color: var(--iro-300);
+}
+
+/* outcome */
+.player-rock[data-hidden] {
+  display: none;
+}
+.player-paper[data-hidden] {
+  display: none;
+}
+.player-scissors[data-hidden] {
+  display: none;
+}
+.computer-rock[data-hidden] {
+  display: none;
+}
+.computer-paper[data-hidden] {
+  display: none;
+}
+.computer-scissors[data-hidden] {
+  display: none;
+}
+.button[data-hidden] {
+  display: none;
 }
 
 /* modals */

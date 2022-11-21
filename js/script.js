@@ -2,12 +2,21 @@
 const aboutButton = document.getElementById("about-button");
 const aboutModal = document.getElementById("about-modal");
 const closeAbout = document.querySelector(".close-about");
+const playAgain = document.getElementById("play-again");
+const footer = document.querySelector(".test-results");
 
 aboutButton.addEventListener("click", () => {
   aboutModal.showModal();
 });
 closeAbout.addEventListener("click", () => {
   aboutModal.close();
+});
+playAgain.addEventListener("click", () => {
+  if (footer.hasAttribute("data-hidden")) {
+    footer.removeAttribute("data-hidden");
+  } else {
+    footer.setAttribute("data-hidden", "");
+  }
 });
 // // Rock, Paper, Scissors javascript game
 // // Basic game details:
