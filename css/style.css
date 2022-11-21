@@ -252,6 +252,36 @@ svg > path {
 .button[data-hidden] {
   display: none;
 }
+.player-point-one[data-hidden] {
+  display: none;
+}
+.player-point-two[data-hidden] {
+  display: none;
+}
+.player-point-three[data-hidden] {
+  display: none;
+}
+.player-point-four[data-hidden] {
+  display: none;
+}
+.player-point-five[data-hidden] {
+  display: none;
+}
+.computer-point-one[data-hidden] {
+  display: none;
+}
+.computer-point-two[data-hidden] {
+  display: none;
+}
+.computer-point-three[data-hidden] {
+  display: none;
+}
+.computer-point-four[data-hidden] {
+  display: none;
+}
+.computer-point-five[data-hidden] {
+  display: none;
+}
 
 /* modals */
 .modal {
