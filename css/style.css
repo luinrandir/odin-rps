@@ -193,6 +193,7 @@ svg > path {
   border-radius: 1vmax;
   transition: scale 250ms ease-in;
   scale: calc(0.9);
+  user-select: none;
 }
 .item > figcaption {
   opacity: 0;
@@ -205,6 +206,10 @@ svg > path {
 }
 .item:hover > figcaption {
   opacity: 1;
+}
+.item:active {
+  box-shadow: 0 0 20px black inset;
+  scale: calc(1.09);
 }
 
 /* buttons */
@@ -225,7 +230,7 @@ svg > path {
   background-color: var(--iro-300);
 }
 
-/* outcome */
+/* data-hidden */
 .player-rock[data-hidden] {
   display: none;
 }
@@ -245,6 +250,21 @@ svg > path {
   display: none;
 }
 .button[data-hidden] {
+  display: none;
+}
+.point-one[data-hidden] {
+  display: none;
+}
+.point-one[data-hidden] {
+  display: none;
+}
+.point-one[data-hidden] {
+  display: none;
+}
+.point-one[data-hidden] {
+  display: none;
+}
+.point-one[data-hidden] {
   display: none;
 }
 
