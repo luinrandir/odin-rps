@@ -121,6 +121,10 @@ svg {
   background-color: var(--iro-100);
 }
 
+.center {
+  text-align: center;
+}
+
 /* general styling */
 body {
   display: flex;
@@ -163,7 +167,9 @@ main {
 .weapons,
 .item,
 .choices,
-.title {
+.title,
+.results,
+.outcome {
   display: flex;
   gap: 1em;
   justify-content: center;
@@ -172,7 +178,8 @@ main {
 }
 .choices,
 .item,
-.title {
+.title,
+.results {
   flex-direction: column;
 }
 svg > path {
@@ -186,6 +193,7 @@ svg > path {
   border-radius: 1vmax;
   transition: scale 250ms ease-in;
   scale: calc(0.9);
+  user-select: none;
 }
 .item > figcaption {
   opacity: 0;
@@ -198,6 +206,10 @@ svg > path {
 }
 .item:hover > figcaption {
   opacity: 1;
+}
+.item:active {
+  box-shadow: 0 0 20px black inset;
+  scale: calc(1.09);
 }
 
 /* buttons */
@@ -216,6 +228,59 @@ svg > path {
 }
 .button:active {
   background-color: var(--iro-300);
+}
+
+/* data-hidden */
+.player-rock[data-hidden] {
+  display: none;
+}
+.player-paper[data-hidden] {
+  display: none;
+}
+.player-scissors[data-hidden] {
+  display: none;
+}
+.computer-rock[data-hidden] {
+  display: none;
+}
+.computer-paper[data-hidden] {
+  display: none;
+}
+.computer-scissors[data-hidden] {
+  display: none;
+}
+.button[data-hidden] {
+  display: none;
+}
+.player-point-one[data-hidden] {
+  display: none;
+}
+.player-point-two[data-hidden] {
+  display: none;
+}
+.player-point-three[data-hidden] {
+  display: none;
+}
+.player-point-four[data-hidden] {
+  display: none;
+}
+.player-point-five[data-hidden] {
+  display: none;
+}
+.computer-point-one[data-hidden] {
+  display: none;
+}
+.computer-point-two[data-hidden] {
+  display: none;
+}
+.computer-point-three[data-hidden] {
+  display: none;
+}
+.computer-point-four[data-hidden] {
+  display: none;
+}
+.computer-point-five[data-hidden] {
+  display: none;
 }
 
 /* modals */
