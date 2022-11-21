@@ -178,9 +178,26 @@ main {
 svg > path {
   fill: var(--iro-shiroi);
 }
+.item {
+  height: 100%;
+  cursor: pointer;
+  padding: 1em;
+  border: solid 5px;
+  border-radius: 1vmax;
+  transition: scale 250ms ease-in;
+  scale: calc(0.9);
+}
 .item > figcaption {
+  opacity: 0;
   text-align: center;
   inline-size: 20rem;
+  transition: opacity 250ms ease-in;
+}
+.item:hover {
+  scale: calc(1.1);
+}
+.item:hover > figcaption {
+  opacity: 1;
 }
 
 /* buttons */
