@@ -6,7 +6,7 @@
 
 // DOM Elements
 // Game Elements
-const outcome = document.getElementById("snarky");
+const outcome = document.getElementById("result");
 const choices = document.querySelectorAll(".choice");
 const playAgain = document.getElementById("play-again");
 const player = {
@@ -63,7 +63,6 @@ function playRound(playerChoice) {
       player["rock"].setAttribute("data-hidden", "");
       break;
   }
-  console.log(`Player choice: ${playerChoice}`);
 
   // We need our computer choice (this is to be random)
   let computerChoice =
@@ -85,12 +84,12 @@ function playRound(playerChoice) {
       computer["rock"].setAttribute("data-hidden", "");
       break;
   }
-  console.log(`Computer choice: ${computerChoice}`);
-  // We need to determine our winner for that round
-
-  console.log(results(playerChoice, computerChoice));
-  console.log(`Player: ${playerScore} Computer: ${computerScore}`);
+  outcome.innerText = results(playerChoice, computerChoice);
   if (playerScore == 5 || computerScore == 5) {
+    outcome.innerText =
+      playerScore == 5
+        ? "Player wins best of five!"
+        : "Computer wins best of five!";
     choices.forEach((choice) => {
       choice.toggleAttribute("data-disable");
     });
@@ -99,12 +98,7 @@ function playRound(playerChoice) {
 }
 
 function results(playerChoice, computerChoice) {
-  playerChoice = playerChoice.toLowerCase();
-  computerChoice = computerChoice.toLowerCase();
-
-  if (playerChoice === computerChoice)
-    return `${playerChoice} vs ${computerChoice} -> Tie!`;
-
+  if (playerChoice === computerChoice) return "Tie!";
   if (playerWin(playerChoice, computerChoice)) {
     playerScore += 1;
     switch (playerScore) {
@@ -126,7 +120,7 @@ function results(playerChoice, computerChoice) {
       default:
         break;
     }
-    return `${playerChoice} vs ${computerChoice} -> Player Wins!`;
+    return "Player Wins!";
   }
   computerScore += 1;
   switch (computerScore) {
@@ -148,7 +142,7 @@ function results(playerChoice, computerChoice) {
     default:
       break;
   }
-  return `${playerChoice} vs ${computerChoice} -> Computer Wins!`;
+  return "Computer Wins!";
 }
 
 function playerWin(playerChoice, computerChoice) {
@@ -161,16 +155,11 @@ function playerWin(playerChoice, computerChoice) {
       return computerChoice === "paper" ? true : false;
   }
 }
-// We need to determine our winner for the game (best out of five)
-function game() {
-  if (playerScore === computerScore) outcome.innerText = "Tie!";
-  outcome.innerText =
-    playerScore > computerScore ? "Player Wins!" : "Computer Wins!";
-}
 
 function resetGame() {
   playerScore = 0;
   computerScore = 0;
+  outcome.innerText = "";
 
   for (let key in player) {
     if (!player[key].hasAttribute("data-hidden")) {
@@ -198,8 +187,6 @@ function resetGame() {
   });
   playAgain.toggleAttribute("data-hidden");
 }
-
-console.log(`Player: ${playerScore} Computer: ${computerScore}`);
 
 // Event listeners
 aboutButton.addEventListener("click", () => {
