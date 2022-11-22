@@ -283,6 +283,11 @@ svg > path {
   display: none;
 }
 
+/* data-disable */
+.choice[data-disable] {
+  pointer-events: none;
+}
+
 /* modals */
 .modal {
   color: var(--iro-shiroi);
