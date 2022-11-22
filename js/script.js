@@ -19,6 +19,20 @@ const computer = {
   paper: document.querySelector(".computer-paper"),
   scissors: document.querySelector(".computer-scissors"),
 };
+const playerPoint = {
+  1: document.querySelector(".player-point-one"),
+  2: document.querySelector(".player-point-two"),
+  3: document.querySelector(".player-point-three"),
+  4: document.querySelector(".player-point-four"),
+  5: document.querySelector(".player-point-five"),
+};
+const computerPoint = {
+  1: document.querySelector(".computer-point-one"),
+  2: document.querySelector(".computer-point-two"),
+  3: document.querySelector(".computer-point-three"),
+  4: document.querySelector(".computer-point-four"),
+  5: document.querySelector(".computer-point-five"),
+};
 // Modals
 const aboutButton = document.getElementById("about-button");
 const aboutModal = document.getElementById("about-modal");
@@ -77,7 +91,6 @@ function playRound(playerChoice) {
   console.log(results(playerChoice, computerChoice));
   console.log(`Player: ${playerScore} Computer: ${computerScore}`);
   if (playerScore == 5 || computerScore == 5) {
-    console.log("DONE!!!!!!!");
     choices.forEach((choice) => {
       choice.toggleAttribute("data-disable");
     });
@@ -94,9 +107,47 @@ function results(playerChoice, computerChoice) {
 
   if (playerWin(playerChoice, computerChoice)) {
     playerScore += 1;
+    switch (playerScore) {
+      case 1:
+        playerPoint[playerScore].toggleAttribute("data-hidden");
+        break;
+      case 2:
+        playerPoint[playerScore].toggleAttribute("data-hidden");
+        break;
+      case 3:
+        playerPoint[playerScore].toggleAttribute("data-hidden");
+        break;
+      case 4:
+        playerPoint[playerScore].toggleAttribute("data-hidden");
+        break;
+      case 5:
+        playerPoint[playerScore].toggleAttribute("data-hidden");
+        break;
+      default:
+        break;
+    }
     return `${playerChoice} vs ${computerChoice} -> Player Wins!`;
   }
   computerScore += 1;
+  switch (computerScore) {
+    case 1:
+      computerPoint[computerScore].toggleAttribute("data-hidden");
+      break;
+    case 2:
+      computerPoint[computerScore].toggleAttribute("data-hidden");
+      break;
+    case 3:
+      computerPoint[computerScore].toggleAttribute("data-hidden");
+      break;
+    case 4:
+      computerPoint[computerScore].toggleAttribute("data-hidden");
+      break;
+    case 5:
+      computerPoint[computerScore].toggleAttribute("data-hidden");
+      break;
+    default:
+      break;
+  }
   return `${playerChoice} vs ${computerChoice} -> Computer Wins!`;
 }
 
@@ -129,6 +180,16 @@ function resetGame() {
   for (let key in computer) {
     if (!computer[key].hasAttribute("data-hidden")) {
       computer[key].toggleAttribute("data-hidden");
+    }
+  }
+  for (let key in playerPoint) {
+    if (!playerPoint[key].hasAttribute("data-hidden")) {
+      playerPoint[key].toggleAttribute("data-hidden");
+    }
+  }
+  for (let key in computerPoint) {
+    if (!computerPoint[key].hasAttribute("data-hidden")) {
+      computerPoint[key].toggleAttribute("data-hidden");
     }
   }
 
