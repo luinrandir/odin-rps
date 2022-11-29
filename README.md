@@ -1,8 +1,15 @@
-# :video_game: Rock, Paper, Scissor
+# :video_game: Rock, Paper, Scissors
 
 ## About
 
-Simple javascript program to learn fundamental concepts of programming and javascript.
-Written to accomplish the task given in the Odin Project. This is a growing project that will
-eventually have an HTML component. For the time being, this README will be sparce until the program
-is written and updated.
+Rock, Paper, Scissors is a simple javascript program that was written to accomplish a project from [The Odin Project](https://www.theodinproject.com/) (TOP). The application uses only Javascript, HTML, and CSS to create a simple online game. The project is part of a series of projects from TOP that I will be completeing.
+
+## Built Using
+
+- HTML
+- CSS
+- Javascript
+
+## Live Demo
+
+- [Live Demo of RPS](https://luinrandir.github.io/odin-rps/)
